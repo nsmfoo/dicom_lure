@@ -23,9 +23,9 @@ The lure can be used in your own infrastructure or used with dicompot (https://g
 
 ### Use cases: 
 
-After having spend some time looking at this, I came up with the following two senarious to justify the time I spend/wasted (they are admittedly a bit vague)
+After having spend some time looking at this, I came up with the following two scenarios to justify the time I spend/wasted (they are admittedly a bit vague)
 
-- Catch insiders: Apparently it's happens from time to time that employees have a hard time not looking at medical journals of the rich and famous. This could be a way to detect that.
+- Catch insiders: Apparently it happens from time to time that employees have a hard time not looking at medical journals of the rich and famous. This could be a way to detect that.
 
 - Catch external intruders accessing your data.
 
