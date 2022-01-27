@@ -15,7 +15,6 @@ def prepare_pdf(pdf_file):
     file_meta = Dataset()
     file_meta.MediaStorageSOPClassUID = '1.2.840.10008.5.1.4.1.1.104.1'
     file_meta.MediaStorageSOPInstanceUID = '2.16.840.1.114430.287196081618142314176776725491661159509.60.1'
-    #file_meta.ImplementationClassUID = '1.3.46.670589.50.1.8.0'
     file_meta.ImplementationClassUID = '1.2.276.0.7230010.3.0.3.6.6'
     file_meta.TransferSyntaxUID = '1.2.840.10008.1.2.1'
 

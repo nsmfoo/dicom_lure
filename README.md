@@ -5,13 +5,13 @@
 
 This is the story of yet another failed research of mine (don't get me started). But I might as well documents it and perhaps it might even be somewhat useful in a way that I can't imagine too someone else.
 
-I had an idea a while back, that I dusted of a couple of months ago. The idea was to see if there where a "natural" way for a DICOM image or rather, the viewer to populate or extend metadata automatically when accessed. The thought was to use that as method to detect an adversary accessing an image.
+I had an idea a while back, that I dusted of a couple of months ago. The idea was to see if there where a "natural" way for a Dicom image or rather, the viewer to populate or extend metadata automatically when accessed. The thought was to use that as method to detect an adversary accessing an image.
 
 Here might be a good time to once again highlight that I really have no clue what I'm doing and I don't work in meditech, apparently the lack of insight did not stop me ...
 
-So having looked at the DICOM image specification and played around a bit with the metadata.. I decided that I could not find a way to trigger a download/beacon of any sort. Which was sad as this could have been my conference talk for the rest of the year (I'm just kidding).
+So having looked at the Dicom image specification and played around a bit with the metadata.. I decided that I could not find a way to trigger a download/beacon of any sort. Which was sad as this could have been my conference talk for the rest of the year (I'm just kidding).
 
-So having that route lead to nowhere, I remembered that I did stumble across the possibility to embed PDF files in a DICOM image.
+So having that route lead to nowhere, I remembered that I did stumble across the possibility to embed PDF files in a Dicom image.
 
 So trying to get something out of all of this. I decided to follow that route and here we are.
 
