@@ -29,7 +29,7 @@ After having spend some time looking at this, I came up with the following two s
 
 - Catch external intruders accessing your data.
 
-### What do embed?:
+### What to embed?:
 
 - PDF with a password set. Waste the time of an intruder
 

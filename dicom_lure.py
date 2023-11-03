@@ -82,38 +82,52 @@ else:
 
 # Prepare the PDF
 new_ds = prepare_pdf(args.pdf_file)
-# A long list of values to use from the orginal image to make it blend in. These values can be omitted or extended as you see fit.
-new_ds.PatientID = org_ds.PatientID
-new_ds.PatientName = org_ds.PatientName
+
 new_ds.file_meta.ImplementationVersionName = org_ds.file_meta.ImplementationVersionName
 # I thought it was "smart" to be in the same range, but not the exact S/N 
 sn_rand = random.randint(100,400)
-new_ds.SeriesNumber = org_ds.SeriesNumber + sn_rand
-new_ds.InstanceNumber = org_ds.InstanceNumber
-new_ds.Manufacturer = org_ds.Manufacturer
-new_ds.StudyDate = org_ds.StudyDate
-new_ds.ContentDate = org_ds.ContentDate
-new_ds.AcquisitionTime = org_ds.AcquisitionTime
-new_ds.StudyTime = org_ds.StudyTime
-new_ds.SeriesTime = org_ds.SeriesTime
-new_ds.ContentTime = org_ds.ContentTime
-new_ds.AccessionNumber = org_ds.AccessionNumber
-new_ds.Manufacturer = org_ds.Manufacturer
-new_ds.PatientBirthDate = org_ds.PatientBirthDate
-new_ds.PatientSex = org_ds.PatientSex
-new_ds.StudyID = org_ds.StudyID
+
+# A long list of values to use from the orginal image to make it blend in. These values can be omitted or extended as you see fit.
+data_elements  = ['InstanceNumber',
+                 'Manufacturer',
+                 'StudyDate',
+                 'ContentDate',
+                 'AcquisitionTime',
+                 'StudyTime',
+                 'SeriesTime',
+                 'ContentTime',
+                 'AccessionNumber',
+                 'PatientBirthDate',
+                 'PatientSex',
+                 'PatientID',
+                 'PatientName',
+                 'StudyID',
+                 'StudyDescription',
+                 'ImageComments',
+                 'ProtocolName',
+                 'StudyInstanceUID',
+                 'SeriesInstanceUID',
+                 'SeriesDescription',
+                 'SeriesNumber']
+
+for x in data_elements:
+    try:
+        if x == 'SeriesNumber':
+            new_value = org_ds.data_element(x).value + sn_rand
+            new_ds.SeriesNumber = new_value
+        else:
+            new_ds.add(org_ds.data_element(x))
+    except:
+        continue
+
+new_ds.file_meta.SourceApplicationEntityTitle = org_ds.file_meta.SourceApplicationEntityTitle
+  
 if args.title_name:
     print("-[ Applying a custom title name:",args.title_name)
-    new_ds.DocumentTitle =  args.title_name
+    new_ds.DocumentTitle = args.title_name
 else:
     # Change the default title to something more serious
     new_ds.DocumentTitle =  'The Hoff medical history'
-
-new_ds.StudyInstanceUID = org_ds.StudyInstanceUID
-new_ds.SeriesInstanceUID = org_ds.SeriesInstanceUID
-new_ds.file_meta.SourceApplicationEntityTitle = org_ds.file_meta.SourceApplicationEntityTitle
-new_ds.SeriesDescription = org_ds.SeriesDescription
-new_ds.StudyDescription = org_ds.StudyDescription
 
 # Save the new file
 new_ds.save_as(args.output_file)
