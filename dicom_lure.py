@@ -1,5 +1,4 @@
-
-#!/usr/local/bin/python3
+#!/usr/bin/env python3
 
 import pydicom
 import tempfile
@@ -40,7 +39,8 @@ def prepare_pdf(pdf_file):
     return temp_ds
 
 # Le Banner 
-print("""
+print(r
+"""
 o-o   o-O-o   o-o  o-o  o   o   o                             */()
 |  \    |    /    o   o |\ /|   |                          .  ( 
 |   O   |   O     |   | | O |   |    o  o o-o o-o       */  ( %% 

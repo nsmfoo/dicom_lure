@@ -43,6 +43,14 @@ After having spend some time looking at this, I came up with the following two s
 
 - Or a combination of the above, mix and match as you see fit
 
+### Installation:
+
+- git clone https://github.com/nsmfoo/dicom_lure
+- cd dicom_lure
+- python3 -m venv venv/
+- source venv/bin/activate
+- pip3 install -r requirements.txt
+
 ### Usage:
 ```
 dicom_lure.py [-h] -T TEMPLATE_FILE -E PDF_FILE -O OUTPUT_FILE [-N TITLE_NAME]
